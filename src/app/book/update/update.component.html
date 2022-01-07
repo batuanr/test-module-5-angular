@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="margin-top: 20px">
+      <mat-card style="margin: 50px 0">
+        <form class="update" novalidate>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput name="title" [(ngModel)]="book.title" #title="ngModel" required>
+            <mat-icon color="accent" matSuffix>account_circle</mat-icon>
+            <mat-error *ngIf="title.hasError('required')">The name is required!</mat-error>
+          </mat-form-field><br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Author</mat-label>
+            <input matInput name="author" [(ngModel)]="book.author" #author="ngModel" required>
+            <mat-icon color="accent" matSuffix>account_circle</mat-icon>
+            <mat-error *ngIf="author.hasError('required')">The name is required!</mat-error>
+          </mat-form-field><br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea style="height: 200px" matInput name="description" [(ngModel)]="book.description" #description="ngModel" required></textarea>
+            <mat-icon color="accent" matSuffix>account_circle</mat-icon>
+            <mat-error *ngIf="description.hasError('required')">The name is required!</mat-error>
+          </mat-form-field><br>
+
+
+
+
+          <br>
+          <button style="margin-right: 40px" (click)="ngSubmit()" mat-stroked-button color="black" class="mat-button-toggle-group btn-outline-primary">Update
+            <mat-icon color="warn" matSuffix>update</mat-icon>
+          </button>
+          <button (click)="cancel()" mat-stroked-button color="blue" class="mat-button-toggle-group btn-outline-danger">Cancel
+            <mat-icon color="accent" matSuffix>cancel</mat-icon>
+          </button>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
